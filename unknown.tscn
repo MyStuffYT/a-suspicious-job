@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm8vp7ue57xyc"]
+
+[ext_resource type="Texture2D" uid="uid://c3fxlfn7smhqj" path="res://test.png" id="1_oy6r7"]
+
+[node name="characterthig" type="TextureRect"]
+z_index = 1
+offset_left = 778.0
+offset_top = 266.0
+offset_right = 1227.0
+offset_bottom = 1083.0
+texture = ExtResource("1_oy6r7")
+expand_mode = 1
+stretch_mode = 5

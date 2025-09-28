@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://bubnbahhi38je"]
+
+[ext_resource type="FontFile" uid="uid://4lsli0s5xqig" path="res://ThaleahFat.ttf" id="1_iqhmn"]
+
+[node name="promprom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -295.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 799.0
+offset_right = 1905.0
+offset_bottom = 869.0
+theme_override_fonts/font = ExtResource("1_iqhmn")
+theme_override_font_sizes/font_size = 76
+text = "name"
+
+[node name="prompt" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 869.0
+offset_right = 1883.0
+offset_bottom = 1056.0
+theme_override_fonts/font = ExtResource("1_iqhmn")
+theme_override_font_sizes/font_size = 50
+text = "text"
+autowrap_mode = 1
+
+[node name="choices" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -394.0
+offset_bottom = -303.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Button" type="Button" parent="choices"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqhmn")
+theme_override_font_sizes/font_size = 72
+text = "placeholder"
+
+[node name="Button2" type="Button" parent="choices"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqhmn")
+theme_override_font_sizes/font_size = 72
+text = "placeholder"
