@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://kexf1wy15uy1"]
+
+[ext_resource type="Script" uid="uid://dltyekmpln6lm" path="res://finalscene.gd" id="1_ku55u"]
+[ext_resource type="Texture2D" uid="uid://cxexl0cl6o1k1" path="res://office.jpg" id="2_88or0"]
+[ext_resource type="PackedScene" uid="uid://bubnbahhi38je" path="res://prompt.tscn" id="3_bumlt"]
+[ext_resource type="AudioStream" uid="uid://cyn64evvmv7xn" path="res://beep.mp3" id="4_bumlt"]
+[ext_resource type="AudioStream" uid="uid://dxbkii3lqht5c" path="res://doorknob.mp3" id="5_75fl8"]
+[ext_resource type="AudioStream" uid="uid://veww7tumo03r" path="res://smth.wav" id="6_75fl8"]
+[ext_resource type="AudioStream" uid="uid://du0mb78hfat3g" path="res://chirp.mp3" id="7_u2ru3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ku55u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_88or0")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="promptt" parent="." instance=ExtResource("3_bumlt")]
+z_index = 2
+layout_mode = 1
+
+[node name="beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bumlt")
+volume_db = 2.922
+
+[node name="doorknob" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_75fl8")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_75fl8")
+
+[node name="chirp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_u2ru3")
+
+[connection signal="button_down" from="promptt/choices/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="promptt/choices/Button2" to="." method="_on_button_2_button_down"]
+
+[editable path="promptt"]

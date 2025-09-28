@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://6w6ovhmjhahk"]
+
+[ext_resource type="PackedScene" uid="uid://c1puagsydbdbv" path="res://alley.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://boplh8hp1s8pq" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bubnbahhi38je" path="res://prompt.tscn" id="3_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://veww7tumo03r" path="res://smth.wav" id="4_fc0e3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_feb5d")
+
+[node name="TextureRect" parent="." instance=ExtResource("1_80nbo")]
+layout_mode = 0
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="promptt" parent="." instance=ExtResource("3_fc0e3")]
+z_index = 2
+layout_mode = 1
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fc0e3")
+
+[connection signal="button_down" from="promptt/choices/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="promptt/choices/Button2" to="." method="_on_button_2_button_down"]
+
+[editable path="promptt"]

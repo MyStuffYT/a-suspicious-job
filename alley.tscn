@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1puagsydbdbv"]
+
+[ext_resource type="Texture2D" uid="uid://dc5jtakm5odn2" path="res://alley.jpg" id="1_nskri"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_nskri")

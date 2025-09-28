@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cemu8vic1ss85"]
+
+[ext_resource type="AudioStream" uid="uid://s8216q0hnmyx" path="res://animalcrossing.mp3" id="1_td4n3"]
+[ext_resource type="Script" uid="uid://bw0ahjknpe1ry" path="res://audio_stream_player.gd" id="2_i5m0e"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_td4n3")
+script = ExtResource("2_i5m0e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.7
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
